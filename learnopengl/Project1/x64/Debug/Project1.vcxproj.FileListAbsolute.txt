@@ -1,0 +1,2 @@
+C:\opengl\learnopengl\Project1\x64\Debug\Project1.exe
+C:\opengl\learnopengl\Project1\x64\Debug\Project1.pdb

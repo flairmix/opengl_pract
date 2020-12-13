@@ -1,0 +1,10 @@
+^C:\OPENGL\GLFW-3.3.2\BUILD\CMAKEFILES\1013F52503A1F54B11547B06B31D737D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/opengl/glfw-3.3.2 -BC:/opengl/glfw-3.3.2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/opengl/glfw-3.3.2/build/GLFW.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

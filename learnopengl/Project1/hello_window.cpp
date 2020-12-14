@@ -1,6 +1,11 @@
-#include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
+#include <iostream>
+
+void framebuffer_size_callback(GLFWwindow * window, int width, int height);
+void process_input(GLFWwindow * (window));
+
 
 
 int main() {
@@ -29,10 +34,23 @@ int main() {
 
 	glViewport(0, 0, 800, 600);
 
-	void framebuffer_size_callback(GLFWwindow * window, int width, int height);
-	void process_input(GLFWwindow * (window));
 
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+	float vertices[]{
+		-0.5f, 0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f, 0.5f, 0.0f
+	};
+
+
+	// vertices buffer 
+	unsigned int VBO;
+	glGenBuffers(1, &VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
 
 	while (!glfwWindowShouldClose(window)) {
 		
@@ -44,7 +62,6 @@ int main() {
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
-
 
 
 	glfwTerminate();
